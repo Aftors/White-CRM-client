@@ -1,0 +1,27 @@
+@import './bank';
+
+* {
+  margin: 0;
+  padding: 0;
+  /*   color: white; */
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'SF-regular', -apple-system, system-ui, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Ubuntu;
+}
+
+html {
+  height: 100%;
+  background-color: $theme-black;
+}
+
+.App {
+  width: 100vw;
+  max-width: 1440px;
+  height: 100vh;
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  background-color: $theme-black;
+}

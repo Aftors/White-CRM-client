@@ -1,0 +1,56 @@
+@import '../../../bank';
+
+.button {
+  background-color: $theme-gray;
+  color: #fff;
+  display: inline-block;
+  padding: 4px 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 100px;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+.active {
+  background-color: #fff;
+  color: #000;
+  opacity: 1;
+}
+
+.buttonGreen {
+  background-color: $order-green;
+  color: #000;
+}
+
+.buttonBlue {
+  background: $order-blue;
+  color: #000;
+}
+
+.buttonOrange {
+  background-color: $order-orange;
+  color: #000;
+}
+
+.buttonPurple {
+  background-color: $order-purple;
+  color: #000;
+}
+
+.buttonRed {
+  background-color: $order-red;
+  color: #000;
+}
+
+.buttonOcean {
+  background-color: $order-ocean;
+  color: #000;
+}
+
+.buttonGray {
+  background-color: $theme-gray;
+  color: #000;
+}

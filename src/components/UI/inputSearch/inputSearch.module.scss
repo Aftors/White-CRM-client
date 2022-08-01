@@ -1,0 +1,10 @@
+@import '../../../bank';
+
+.input {
+  background-color: $theme-gray;
+  width: 270px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 40px;
+}

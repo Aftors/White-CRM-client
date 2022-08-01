@@ -1,0 +1,79 @@
+@import '../../bank';
+
+.conteiner {
+  display: flex;
+  flex-direction: column;
+}
+
+.titel {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.titel span {
+  display: flex;
+  width: 100px;
+  color: $font-gray;
+  font-size: 0.8rem;
+  border-right: 1px solid $theme-gray-5;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+#order {
+  width: 8%;
+  justify-content: center;
+}
+
+#names {
+  width: 15%;
+}
+
+#info {
+  width: 49%;
+}
+
+#state {
+  width: 12%;
+}
+
+#date {
+  width: 8%;
+  justify-content: center;
+}
+
+#cash {
+  width: 8%;
+  border: none;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  background-color: $theme-gray;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.row:hover {
+  background-color: $theme-gray-5;
+}
+
+.cell {
+  display: flex;
+  color: white;
+  font-size: 0.8rem;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  /* justify-content: center; */
+  margin: 5px 0;
+  padding: 0 10px;
+  border-right: 1px solid $theme-gray-5;
+}

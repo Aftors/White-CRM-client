@@ -1,0 +1,18 @@
+@import '../../../bank';
+
+.input {
+  padding: 5px 0 5px 10px;
+  border: 1px $theme-black solid;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: auto;
+}
+
+.disable {
+  pointer-events: none;
+  border: 1px $theme-gray-5 solid;
+  background-color: $theme-gray-5;
+  &::placeholder {
+    color: white;
+  }
+}
