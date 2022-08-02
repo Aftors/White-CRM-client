@@ -1,0 +1,14 @@
+@import '../../bank';
+
+.receptionBar {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  padding: 0 10px;
+  align-items: center;
+  margin-left: 15px;
+  border-radius: 5px;
+  align-items: center;
+  background-color: $theme-gray;
+}

@@ -1,12 +1,12 @@
 import React from 'react'
-import classes from './home.module.scss'
+import classes from './orders.module.scss'
 import Header from '../components/header/Header'
 import Body from '../components/body/Body'
 import ConfigOrder from '../components/configOrder/ConfigOrder'
 
 const Home = () => {
   return (
-    <div className={classes.home}>
+    <div className={classes.main}>
       <Header />
       <Body />
       <ConfigOrder />
