@@ -1,6 +1,7 @@
 import userReducer from './reducers/UserSlice'
 import deviceModalReducer from './reducers/modal/DeviceModalSlice'
 import createOrderReducer from './reducers/order/CreateOrderSlice'
+import functionalBarReducer from './reducers/functionarBar/FunctionalBarSlice'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { userAPI } from '../service/UserService'
 import { orderAPI } from '../service/OrderService'
@@ -9,6 +10,7 @@ const rootReducer = combineReducers({
   userReducer,
   deviceModalReducer,
   createOrderReducer,
+  functionalBarReducer,
   [userAPI.reducerPath]: userAPI.reducer,
   [orderAPI.reducerPath]: orderAPI.reducer,
 })

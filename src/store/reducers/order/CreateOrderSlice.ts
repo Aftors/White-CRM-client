@@ -1,27 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { IOrder } from '../../../models/IOrder'
 
-interface OrderState {
-  numOrder: number
-  deviceSN: string
-  legalEntity: boolean
-  name: string
-  lastName: string
-  phoneNum: string
-  prePayment: number
-  prePrice: number
-  descriptionDamage: string
-  descriptionDevice: string
-}
-
-const initialState: OrderState = {
+const initialState: IOrder = {
   numOrder: 1,
   deviceSN: '',
   legalEntity: false,
   name: '',
   lastName: '',
   phoneNum: '',
-  prePayment: 0,
-  prePrice: 0,
+  prePayment: '',
+  prePrice: '',
   descriptionDamage: '',
   descriptionDevice: '',
 }
@@ -32,6 +20,24 @@ export const CreateOrderSlice = createSlice({
   reducers: {
     legalEntityState(state) {
       state.legalEntity = !state.legalEntity
+    },
+    nameBind(state, action) {
+      state.name = action.payload
+    },
+    lastNameBind(state, action) {
+      state.lastName = action.payload
+    },
+    prePaymentBind(state, action) {
+      state.prePayment = action.payload
+    },
+    prePriceBind(state, action) {
+      state.prePrice = action.payload
+    },
+    phoneNumBind(state, action) {
+      state.phoneNum = action.payload
+    },
+    deviceSNBind(state, action) {
+      state.deviceSN = action.payload
     },
   },
   extraReducers: {},

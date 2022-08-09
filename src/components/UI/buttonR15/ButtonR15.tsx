@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import classes from './buttonR15.module.scss'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children?: React.ReactChild | React.ReactNode
+  children?: React.ReactNode
   active?: boolean
   id?: string
   color?: ColorVar

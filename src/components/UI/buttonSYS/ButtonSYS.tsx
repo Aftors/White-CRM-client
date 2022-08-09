@@ -1,12 +1,13 @@
 import React, { FC } from 'react'
 import classes from './buttonSYS.module.scss'
 
-interface ButtonProps {
+interface ButtonProps extends React.InputHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode
   active?: boolean
   id?: string
+  name?: string
   color?: ColorVar
-  onClick?: () => void
+  onClick?: (e: React.MouseEvent) => void
 }
 
 interface CSSType {
@@ -22,6 +23,7 @@ export enum ColorVar {
 const ButtonSYS: FC<ButtonProps> = ({
   children,
   active,
+  name,
   id,
   onClick,
   color = classes.butonGray,
@@ -35,6 +37,7 @@ const ButtonSYS: FC<ButtonProps> = ({
   return (
     <button
       id={id}
+      name={name}
       className={
         active
           ? `${classes.button}  ${classes.active}`

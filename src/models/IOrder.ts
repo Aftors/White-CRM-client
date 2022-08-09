@@ -5,8 +5,8 @@ export interface IOrder {
   name: string
   lastName: string
   phoneNum: string
-  prePayment: number
-  prePrice: number
+  prePayment: string
+  prePrice: string
   descriptionDamage: string
   descriptionDevice: string
 }

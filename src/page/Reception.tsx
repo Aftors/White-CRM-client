@@ -9,13 +9,17 @@ import classes from './reception.module.scss'
 
 const Reception = () => {
   const { visible } = useAppSelector((state) => state.deviceModalReducer)
+  const { activeComponent } = useAppSelector(
+    (state) => state.functionalBarReducer
+  )
+
   return (
     <div className={classes.reception}>
       <Header />
       <FunctionalBar />
       <div className={classes.body}>
         <div className={classes.left}>
-          <CreatOrder />
+          {activeComponent === 'create' && <CreatOrder />}
         </div>
         <div className={classes.right}>
           <ReceptionBar />
