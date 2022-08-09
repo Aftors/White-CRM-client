@@ -3,8 +3,14 @@ import classes from './creatOrder.module.scss'
 import ButtonSYS from '../UI/buttonSYS/ButtonSYS'
 import ButtonR15, { ColorVar } from '../UI/buttonR15/ButtonR15'
 import InputOrder from '../UI/inputOrder/inputOrder'
+import { useAppDispatch } from '../../hooks/redux'
+import { deviceModalSlice } from '../../store/reducers/modal/DeviceModalSlice'
+import LegalEntity from './legalEntity/LegalEntity'
 
 const CreatOrder = () => {
+  const { visibleOn } = deviceModalSlice.actions
+  const dispatch = useAppDispatch()
+
   return (
     <div className={classes.conteiner}>
       <div className={classes.header}>
@@ -15,7 +21,7 @@ const CreatOrder = () => {
         <div className={classes.leftColl}>
           <div className={classes.model}>
             <p>Модель</p>
-            <ButtonSYS>Выбрать</ButtonSYS>
+            <ButtonSYS onClick={() => dispatch(visibleOn())}>Выбрать</ButtonSYS>
           </div>
           <InputOrder
             disable={true}
@@ -24,10 +30,7 @@ const CreatOrder = () => {
           ></InputOrder>
           <span>SN / imei</span>
           <InputOrder type="text"></InputOrder>
-          <ButtonR15 id={classes.person} active={true}>
-            Частное лицо
-          </ButtonR15>
-          <ButtonR15 id={classes.person}>Юридическое лицо</ButtonR15>
+          <LegalEntity />
           <span>Имя</span>
           <InputOrder type="text"></InputOrder>
           <span>Фамилия</span>

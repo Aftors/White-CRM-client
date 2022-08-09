@@ -2,10 +2,13 @@ import React from 'react'
 import CreatOrder from '../components/creatOrder/CreatOrder'
 import FunctionalBar from '../components/functionalBar/FunctionalBar'
 import Header from '../components/header/Header'
+import DeviceModal from '../components/receptionColum/modal/DeviceModal'
 import ReceptionBar from '../components/receptionColum/ReceptionColum'
+import { useAppSelector } from '../hooks/redux'
 import classes from './reception.module.scss'
 
 const Reception = () => {
+  const { visible } = useAppSelector((state) => state.deviceModalReducer)
   return (
     <div className={classes.reception}>
       <Header />
@@ -19,6 +22,7 @@ const Reception = () => {
           <ReceptionBar />
         </div>
       </div>
+      {visible && <DeviceModal />}
     </div>
   )
 }

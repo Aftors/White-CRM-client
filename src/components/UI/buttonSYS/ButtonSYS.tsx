@@ -2,10 +2,11 @@ import React, { FC } from 'react'
 import classes from './buttonSYS.module.scss'
 
 interface ButtonProps {
-  children?: React.ReactChild | React.ReactNode
+  children?: React.ReactNode
   active?: boolean
   id?: string
   color?: ColorVar
+  onClick?: () => void
 }
 
 interface CSSType {
@@ -22,6 +23,7 @@ const ButtonSYS: FC<ButtonProps> = ({
   children,
   active,
   id,
+  onClick,
   color = classes.butonGray,
 }) => {
   const colors: CSSType = {
@@ -38,6 +40,7 @@ const ButtonSYS: FC<ButtonProps> = ({
           ? `${classes.button}  ${classes.active}`
           : `${classes.button} ${colors[color]}`
       }
+      onClick={onClick}
     >
       {children}
     </button>
