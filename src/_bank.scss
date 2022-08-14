@@ -1,17 +1,28 @@
-$theme-black: #1e1e1e;
-$theme-gray: #323232;
-$theme-purple: #bba3ff;
+$theme-back: #f4f4f4;
+$theme-gray: #fff;
 $theme-gray-5: #565656;
 
+$dark-gray: #343844;
+$light-gray: #d9d9d9;
 $font-gray: #858585;
-$counter-green: #98f2bd;
+$font-dark-gray: #343844;
+$counter-green: #37a874;
 
-$order-green: #98f2bd;
-$order-blue: #63c7ff;
-$order-orange: #ffc163;
-$order-purple: #bba3ff;
-$order-red: #fe918a;
-$order-ocean: #49e2f6;
+$green: #37a874;
+$green-light: #b5eed4;
+$blue: #30859b;
+$blue-light: #e4f9ff;
+$orange: #fba94f;
+$orange-light: #ffe5c6;
+$purple: #7672dd;
+$purple-light: #e7e7ff;
+$red: #ff6565;
+$red-light: #ffd9d9;
+$ocean: #01546a;
+$ocean-light: #d3f5ff;
 
 $white: #fff;
 $black: black;
+
+$box-shadow: 0px 2px 10px 0px rgba(108, 108, 108, 0.2),
+  0px 0px 1px 0px rgba(108, 108, 108, 0.2);

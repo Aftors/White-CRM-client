@@ -10,7 +10,7 @@ const Navigation = () => {
         <i></i>
         <span className={classes.body}>Приемка</span>
       </Link>
-      <Link to="/orders" className={`${classes.item} + ${classes.activ}`}>
+      <Link to="/orders" className={classes.item}>
         <i></i>
         <span className={classes.body}>Заказы</span>
         <span className={classes.counter}>41</span>

@@ -15,9 +15,11 @@ const LegalEntity = () => {
           name="legalEntity"
           value="false"
           checked={legalEntity === false ? true : false}
-          onChange={() => dispatch(legalEntityState())}
+          onChange={() => dispatch(legalEntityState(true))}
         />
-        <label onClick={() => dispatch(legalEntityState())}>Физ. лицо</label>
+        <label onClick={() => dispatch(legalEntityState(false))}>
+          Физ. лицо
+        </label>
       </div>
       <div className={classes.body}>
         <input
@@ -25,9 +27,9 @@ const LegalEntity = () => {
           name="legalEntity"
           value="true"
           checked={legalEntity === true ? true : false}
-          onChange={() => dispatch(legalEntityState())}
+          onChange={() => dispatch(legalEntityState(true))}
         />
-        <label onClick={() => dispatch(legalEntityState())}>Юр. лицо</label>
+        <label onClick={() => dispatch(legalEntityState(true))}>Юр. лицо</label>
       </div>
     </div>
   )

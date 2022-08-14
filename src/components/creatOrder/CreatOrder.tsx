@@ -7,10 +7,20 @@ import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { deviceModalSlice } from '../../store/reducers/modal/DeviceModalSlice'
 import LegalEntity from './legalEntity/LegalEntity'
 import { CreateOrderSlice } from '../../store/reducers/order/CreateOrderSlice'
+import { orderAPI } from '../../service/OrderService'
 
 const CreatOrder = () => {
-  const { name, lastName, prePayment, prePrice, phoneNum, deviceSN } =
-    useAppSelector((state) => state.createOrderReducer)
+  const {
+    name,
+    lastName,
+    prePayment,
+    prePrice,
+    phoneNum,
+    deviceSN,
+    deviceModel,
+    descriptionDamage,
+    descriptionDevice,
+  } = useAppSelector((state) => state.createOrderReducer)
   const { visibleOn } = deviceModalSlice.actions
   const {
     nameBind,
@@ -19,13 +29,26 @@ const CreatOrder = () => {
     prePriceBind,
     phoneNumBind,
     deviceSNBind,
+    descriptionDamageBind,
+    descriptionDeviceBind,
   } = CreateOrderSlice.actions
   const dispatch = useAppDispatch()
+
+  const stateForm = useAppSelector((state) => state.createOrderReducer)
+  const [createOrder, { isLoading }] = orderAPI.useCreateOrderMutation()
+
+  const handleCreateOrder = async () => {
+    try {
+      console.log(stateForm)
+      await createOrder(stateForm)
+    } catch {
+      console.log('error')
+    }
+  }
 
   return (
     <div className={classes.conteiner}>
       <div className={classes.header}>
-        <span>№1303</span>
         <p>Создание заказа</p>
       </div>
       <div className={classes.body}>
@@ -36,8 +59,9 @@ const CreatOrder = () => {
           </div>
           <InputOrder
             disable={true}
-            placeholder="Macbook Pro a1708"
+            placeholder={deviceModel ? deviceModel : 'выберите модель'}
             type="text"
+            readOnly
           ></InputOrder>
           <span>SN / imei</span>
           <InputOrder
@@ -64,9 +88,16 @@ const CreatOrder = () => {
             value={phoneNum}
             onChange={(e) => dispatch(phoneNumBind(e.target.value))}
           ></InputOrder>
+          <span>Описание неисправности</span>
+          <textarea
+            name="creatOrder"
+            rows={5}
+            value={descriptionDamage}
+            onChange={(e) => dispatch(descriptionDamageBind(e.target.value))}
+          ></textarea>
         </div>
         <div className={classes.rightColl}>
-          <div>
+          <div className={classes.block}>
             <span>Менеджер</span>
             <InputOrder
               disable={true}
@@ -76,28 +107,35 @@ const CreatOrder = () => {
             <span>Инженер</span>
             <InputOrder type="text"></InputOrder>
           </div>
-          <div>
+          <div className={classes.block}>
             <span>Предоплата</span>
             <InputOrder
               type="number"
               value={prePayment}
+              placeholder="0"
               onChange={(e) => dispatch(prePaymentBind(e.target.value))}
             ></InputOrder>
             <span>Ориентировочная цена</span>
             <InputOrder
               type="number"
               value={prePrice}
+              placeholder="0"
               onChange={(e) => dispatch(prePriceBind(e.target.value))}
             ></InputOrder>
+            <span>Состояние, комплект</span>
+            <textarea
+              name="creatOrder"
+              rows={5}
+              value={descriptionDevice}
+              onChange={(e) => dispatch(descriptionDeviceBind(e.target.value))}
+            ></textarea>
           </div>
         </div>
       </div>
-      <span>Описание неисправности</span>
-      <textarea name="creatOrder" rows={5}></textarea>
-      <span>Состояние, комплект</span>
-      <textarea name="creatOrder" rows={5}></textarea>
-      <div className={classes.basement}>
-        <ButtonR15 color={ColorVar.purple}>Создать</ButtonR15>
+      <div className={classes.buttonCreate}>
+        <ButtonR15 color={ColorVar.purple} onClick={() => handleCreateOrder()}>
+          Создать
+        </ButtonR15>
       </div>
     </div>
   )

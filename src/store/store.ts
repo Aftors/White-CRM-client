@@ -5,7 +5,7 @@ import functionalBarReducer from './reducers/functionarBar/FunctionalBarSlice'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { userAPI } from '../service/UserService'
 import { orderAPI } from '../service/OrderService'
-
+import { fabricatorAPI } from '../service/FabricatorService'
 const rootReducer = combineReducers({
   userReducer,
   deviceModalReducer,
@@ -13,6 +13,7 @@ const rootReducer = combineReducers({
   functionalBarReducer,
   [userAPI.reducerPath]: userAPI.reducer,
   [orderAPI.reducerPath]: orderAPI.reducer,
+  [fabricatorAPI.reducerPath]: fabricatorAPI.reducer,
 })
 
 export const setupStore = () => {
@@ -21,7 +22,8 @@ export const setupStore = () => {
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware()
         .concat(userAPI.middleware)
-        .concat(orderAPI.middleware),
+        .concat(orderAPI.middleware)
+        .concat(fabricatorAPI.middleware),
   })
 }
 

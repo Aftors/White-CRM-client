@@ -6,6 +6,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   active?: boolean
   id?: string
   color?: ColorVar
+  onClick: () => void
 }
 
 interface CSSType {
@@ -23,6 +24,7 @@ const ButtonR15: FC<ButtonProps> = ({
   children,
   active,
   id,
+  onClick,
   color = 'default',
 }) => {
   const colors: CSSType = {
@@ -33,6 +35,7 @@ const ButtonR15: FC<ButtonProps> = ({
   return (
     <button
       id={id}
+      onClick={onClick}
       className={
         active
           ? `${classes.button}  ${classes.active}`

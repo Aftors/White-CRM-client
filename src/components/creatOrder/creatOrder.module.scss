@@ -3,40 +3,32 @@
 .conteiner {
   display: flex;
   flex-direction: column;
-  height: 750px;
   background-color: $theme-gray;
+  box-shadow: 0px 2px 10px 4px rgba(108, 108, 108, 0.2),
+    0px 0px 1px 0px rgba(108, 108, 108, 0.2);
   border-radius: 5px;
   padding: 15px 25px;
   span {
-    color: $white;
+    color: $font-dark-gray;
     font-size: 0.8rem;
-    margin-top: 5px;
   }
 }
 
 .header {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   width: 100%;
-  align-items: center;
-  span {
-    border-radius: 10px;
-    padding: 4px 12px;
-    font-size: 0.9rem;
-    color: #fff;
-    border: 1px $theme-purple solid;
-  }
   p {
-    color: white;
+    color: $font-dark-gray;
     font-size: 0.9rem;
-    margin-left: 25%;
   }
 }
 
 .body {
   display: flex;
   flex-direction: row;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .model {
@@ -44,12 +36,10 @@
   flex-direction: row;
   align-items: center;
   padding: 10px 0;
-  color: white;
   font-size: 0.8rem;
   button {
     margin-left: 10px;
-    background-color: #fff;
-    color: $theme-black;
+    background-color: $light-gray;
   }
 }
 
@@ -76,10 +66,19 @@
 .rightColl {
   width: 40%;
   justify-content: space-between;
-  padding-top: 26px;
+  padding-top: 33px;
   input {
     width: 100%;
   }
+  textarea {
+    width: 100%;
+  }
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 textarea {
@@ -87,6 +86,8 @@ textarea {
   border-radius: 5px;
   margin-top: 5px;
   padding: 5px;
+  width: 80%;
+  border-color: $light-gray;
 }
 
 .basement {
@@ -94,9 +95,16 @@ textarea {
   margin: auto 0;
   flex-direction: row;
   align-content: center;
-  color: #fff;
   button {
     margin-left: auto;
-    color: $white;
+  }
+}
+
+.buttonCreate {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  button {
+    margin-top: 10px;
   }
 }

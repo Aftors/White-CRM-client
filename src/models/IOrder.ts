@@ -1,5 +1,6 @@
 export interface IOrder {
   numOrder: number
+  deviceModel: string
   deviceSN: string
   legalEntity: boolean
   name: string

@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 import { IOrder } from '../../../models/IOrder'
 
 const initialState: IOrder = {
-  numOrder: 1,
+  numOrder: 0,
+  deviceModel: '',
   deviceSN: '',
   legalEntity: false,
   name: '',
@@ -18,8 +19,8 @@ export const CreateOrderSlice = createSlice({
   name: 'createOrder',
   initialState,
   reducers: {
-    legalEntityState(state) {
-      state.legalEntity = !state.legalEntity
+    legalEntityState(state, action) {
+      state.legalEntity = action.payload
     },
     nameBind(state, action) {
       state.name = action.payload
@@ -38,6 +39,15 @@ export const CreateOrderSlice = createSlice({
     },
     deviceSNBind(state, action) {
       state.deviceSN = action.payload
+    },
+    deviceModel(state, action) {
+      state.deviceModel = action.payload
+    },
+    descriptionDamageBind(state, action) {
+      state.descriptionDamage = action.payload
+    },
+    descriptionDeviceBind(state, action) {
+      state.descriptionDevice = action.payload
     },
   },
   extraReducers: {},

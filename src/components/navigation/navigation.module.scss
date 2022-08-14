@@ -34,9 +34,9 @@
 }
 
 .item:hover {
-  border-radius: 10px;
-  background-color: $theme-gray;
-  transition: all 0.2s ease 0s;
+  border-radius: 15px;
+  background-color: $purple-light;
+  transition: background-color 0.2s ease 0s;
 }
 
 .body {
@@ -49,7 +49,7 @@
   font-size: 13px;
   margin-left: auto;
   border-radius: 10px;
-  background-color: $theme-gray;
+  background-color: $purple-light;
   display: block;
   line-height: 18px;
   padding: 4px 8px;
@@ -59,18 +59,18 @@ span.cash {
   font-size: 13px;
   margin-left: auto;
   border-radius: 10px;
-  background-color: $theme-gray;
+  background-color: $purple-light;
   display: block;
   line-height: 18px;
   padding: 4px 8px;
-  color: $counter-green;
+  color: $font-gray;
 }
 
 .activ {
   i {
-    background-color: white;
+    background-color: $purple;
   }
   span.body {
-    color: $theme-purple;
+    color: $purple;
   }
 }
